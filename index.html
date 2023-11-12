@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="en"><head><script src="js/stub.js" type="text/javascript"></script><script src="js/SfdcCore.js" type="text/javascript"></script><script src="js/picklist4.js" type="text/javascript"></script><script src="js/VFState.js" type="text/javascript"></script><script>(function(UITheme) {
+    UITheme.getUITheme = function() { 
+        return UserContext.uiTheme;
+    };
+}(window.UITheme = window.UITheme || {}));</script></head><body>
+
+    
+<meta http-equiv="PRAGMA" content="NO-CACHE">
+<meta http-equiv="Expires" content="Mon, 01 Jan 1990 12:00:00 GMT">
+
+        <meta charset="utf-8">
+         <meta content="en-US" http-equiv="content-language">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Sign In</title>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&amp;display=swap" rel="stylesheet">
+        
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .btn-primary {
+                background-color: #E21833 !important;
+            	border-color: #E21833 !important;
+            }
+            .btn-primary:focus-within
+            {
+            	outline-style: solid;
+                outline-color: rgb(82, 159, 223);
+                outline-width: 4px;
+            }
+
+            .un,
+            .pw {
+                background-color: #F8F8F8 !important;
+                margin-bottom: 10px;
+            }
+
+            .createText {
+                margin-top: 20px;
+            }
+
+            .helpText a,
+            .resetForm {
+                color: #E21833 !important;
+            }
+
+            .createText a {
+                color: #212529 !important;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+            .btn-primary {
+                font-size: 1rem !important;
+            }
+
+            body {
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                background-image: url('CampusAerial');
+                background-position: 50% 0;
+            }
+
+            .topHeader {
+                background-color: #E21833 !important;
+                color: #fff !important;
+                font-size: 1rem !important;
+                padding: 5px 0px;
+                font-family: 'EB Garamond', serif;
+            }
+
+            .card-header {
+                font-size: 10pt !important;
+            }
+
+            .card-title {
+                font-size: 12pt !important;
+            }
+
+
+            .alert {
+                padding: 20px;
+                background-color: #f44336;
+                color: white;
+                opacity: 1;
+                transition: opacity 0.6s;
+                margin-bottom: 15px;
+            }
+
+
+            .alert.warning {
+                background-color: #ff9800;
+            }
+        </style>
+        
+        
+        <script type="text/javascript">
+            function noenter(e) {
+                var tap = 'false';
+                if (window.event) {
+                    key = window.event.keyCode; //IE
+                } else {
+                    key = e.which; //firefox
+                }
+                if (key == 13 && tap) {
+                    var ele = document.getElementById('login-submit');
+                    ele.click();
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+
+
+
+        </script>
+    
+
+    
+        <p class="text-center topHeader">University of Maryland</p>
+        <div class="container" role="main">
+            <div class="row">
+                <div class="col-sm-10 col-md-10 col-lg-10 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h1 class="text-center">
+                                <img alt="University of Maryland Logo" src="images/standard.png" style="max-width:300px;">
+                            </h1><span id="j_id0:j_id5">
+<form id="j_id0:initialButtons" name="j_id0:initialButtons" method="post" action="/tap/Tap_CustomLoginPortalPage" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="j_id0:initialButtons" value="j_id0:initialButtons">
+<div id="j_id0:initialButtons:j_id50"></div>
+</form><span id="ajax-view-state-page-container" style="display: none"><span id="ajax-view-state" style="display: none"><input type="hidden" id="com.salesforce.visualforce.ViewState" name="com.salesforce.visualforce.ViewState" value="i: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"><input type="hidden" id="com.salesforce.visualforce.ViewStateVersion" name="com.salesforce.visualforce.ViewStateVersion" value="202311091955490475"><input type="hidden" id="com.salesforce.visualforce.ViewStateMAC" name="com.salesforce.visualforce.ViewStateMAC" value="AGV5SnViMjVqWlNJNklrSm9XVWR1ZDFOSFpFSldUa0V6TFhCYWIyWmlaM1JSYmpjNVNqZDZhVXhPVFdOSE1YWndiVTV4Y1hOY2RUQXdNMlFpTENKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUlzSW10cFpDSTZJbnRjSW5SY0lqcGNJakF3UkRReE1EQXdNREF3WmtwQ01Wd2lMRndpZGx3aU9sd2lNREpITkRFd01EQXdNREExUldacFhDSXNYQ0poWENJNlhDSjJabk5wWjI1cGJtZHJaWGxjSWl4Y0luVmNJanBjSWpBd05USk5NREF3TURCQ1VGRlFiRndpZlNJc0ltTnlhWFFpT2xzaWFXRjBJbDBzSW1saGRDSTZNVFk1T1RneU1EWXdOak0wT0N3aVpYaHdJam93ZlE9PS4uel9SY0o4U05JWVdROHR1ODFsZUtFQ1FGdlNfSldwYl93Z1ZtVjhqbEZlUT0="></span></span></span><span id="j_id0:j_id6">
+                                <hr class="my-4">
+                                <div class="row">
+                                    <div class="col-md-7 col-sm-12 col-lg-5 mx-auto">
+
+                                        <h2 class="card-title text-center">Terps Application Portal</h2>
+                                        <br><span id="j_id0:j_id16">
+                                            <p class="text-center">Your username is the email used on your application plus .tap</p> 
+                                            <p class="text-center">For example if your email address is testudo@terpmail.com, <br>your username is testudo@terpmail.com.tap</p>
+<form id="j_id0:loginForm" name="j_id0:loginForm" method="post" action="https://terpengage.umd.edu/tap/Tap_CustomLoginPortalPage?startURL=%2Ftap%2Fs%2F&amp;refURL=https%3A%2F%2Fterpengage.umd.edu%2Ftap%2Fs%2F" class="form-signin" enctype="application/x-www-form-urlencoded" onkeypress="return noenter(event);">
+<input type="hidden" name="j_id0:loginForm" value="j_id0:loginForm">
+<span id="j_id0:loginForm:error"></span>
+                                                <div class="form-label-group"><input id="j_id0:loginForm:login-email" type="text" name="j_id0:loginForm:login-email" class="form-control un" placeholder="Username" aria-label="Username">
+                                                </div>
+                                                <div class="form-label-group"><input id="j_id0:loginForm:login-password" type="password" name="j_id0:loginForm:login-password" value="" class="form-control pw" placeholder="Password" aria-label="Password">
+                                                </div><input id="j_id0:loginForm:login-submit" type="submit" name="j_id0:loginForm:login-submit" value="Sign in" class="btn btn-lg btn-primary btn-block text-uppercase">
+                                                <br>
+                                                <p class="text-center helpText">
+                                                    <a href="../tap/Tap_CustomForgotPasswordPage" target="_blank">Forgot your password or need to activate your TAP account?</a>
+                                                </p><div id="j_id0:loginForm:j_id51"></div>
+</form></span>
+                                    </div>
+                                </div></span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+    <script crossorigin="anonymous" src="js/jquery-3.5.0.slim.min.js"></script><script type="text/javascript">Sfdc.onReady(function(){
+	SfdcApp && SfdcApp.Visualforce && SfdcApp.Visualforce.VSManager && SfdcApp.Visualforce.VSManager.vfPrepareForms(["j_id0:initialButtons","j_id0:j_id3","j_id0:loginForm"]);
+
+});</script></body></html>
